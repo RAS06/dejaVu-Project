@@ -13,6 +13,9 @@ public class champion extends Actor
      */
         private boolean locked = false;
         private boolean noLongerTouching = false;
+        private static int currX;
+        private static int currY;
+        private static boolean gotKey = false;
     
     public void act()
     {
@@ -20,34 +23,36 @@ public class champion extends Actor
             move();
         }
         interact();
+        recordLocation();
     }
     //Make sure to add the !locked conditional when moving the champion for text cutscenes.
     public champion() {}
     public void move() {
-        if(Greenfoot.isKeyDown("up")) {
+        if(Greenfoot.isKeyDown("w")) {
             this.setLocation(this.getX(), this.getY() - 3);
         }
-        if(Greenfoot.isKeyDown("down")) {
+        if(Greenfoot.isKeyDown("s")) {
             this.setLocation(this.getX(), this.getY() + 3);
         }
-        if(Greenfoot.isKeyDown("left")) {
+        if(Greenfoot.isKeyDown("a")) {
             this.setLocation(this.getX() - 3, this.getY());
         }
-        if(Greenfoot.isKeyDown("right")) {
+        if(Greenfoot.isKeyDown("d")) {
             this.setLocation(this.getX() + 3, this.getY());
         }
     }
     public void interact(){
-        if(this.isTouching(interactable.class)){
-            this.getWorld().showText("Press \"e\" to interact!", 300, 300);
-            noLongerTouching = true;
-        } else if(noLongerTouching){
-            noLongerTouching = false;
-            int tempX = this.getX();
-            int tempY = this.getY();
-            Greenfoot.setWorld(new roomOne());
-            this.setLocation(tempX, tempY);
-            
+        if(this.isTouching(key.class) && Greenfoot.isKeyDown("e")){
+            this.removeTouching(key.class);
+            this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
+            gotKey = true;
         }
     }
+    public void recordLocation(){
+        currX = this.getX();
+        currY = this.getY();
     }
+    public static int getChampX() {return currX;}
+    public static int getChampY() {return currY;}
+    public static boolean haveKey() {return gotKey;}
+}
