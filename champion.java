@@ -52,7 +52,12 @@ public class champion extends Actor
         currX = this.getX();
         currY = this.getY();
     }
+    
     public static int getChampX() {return currX;}
     public static int getChampY() {return currY;}
     public static boolean haveKey() {return gotKey;}
+    //Move this.champion from another class.
+    public static void moveChampion() {
+        
+    }
 }

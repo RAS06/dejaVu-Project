@@ -17,4 +17,6 @@ comment7.params=
 comment7.target=int\ getChampY()
 comment8.params=
 comment8.target=boolean\ haveKey()
-numComments=9
+comment9.params=
+comment9.target=void\ moveChampion()
+numComments=10
