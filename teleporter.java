@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class teleporter here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Riz 
+ * @0.0.1
  */
 public class teleporter extends Actor
 {

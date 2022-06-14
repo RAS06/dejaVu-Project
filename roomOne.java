@@ -19,7 +19,7 @@ public class roomOne extends World
         addObject(new key(), 500, 500);
         
         for(int i = 0; i < 700; i++){
-            addObject(new obstructor("left"), 0, i);
+            addObject(new obstructor("right"), 720, i);
         }
     }
 }
