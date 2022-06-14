@@ -17,5 +17,9 @@ public class roomOne extends World
         super(750, 750, 1);
         addObject(new champion(), 200, 200);
         addObject(new key(), 500, 500);
+        
+        for(int i = 0; i < 700; i++){
+            addObject(new obstructor("left"), 0, i);
+        }
     }
 }

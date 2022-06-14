@@ -16,6 +16,8 @@ public class champion extends Actor
         private static int currX;
         private static int currY;
         private static boolean gotKey = false;
+        private static int xVelocity;
+        private static int yVelocity;
     
     public void act()
     {
@@ -24,6 +26,7 @@ public class champion extends Actor
         }
         interact();
         recordLocation();
+        moveChampion();
     }
     //Make sure to add the !locked conditional when moving the champion for text cutscenes.
     public champion() {}
@@ -56,8 +59,10 @@ public class champion extends Actor
     public static int getChampX() {return currX;}
     public static int getChampY() {return currY;}
     public static boolean haveKey() {return gotKey;}
+    public static int getXVel() {return xVelocity;}
+    public static int getYVel() {return yVelocity;}
     //Move this.champion from another class.
-    public static void moveChampion() {
-        
+    public void moveChampion() {
+        setLocation(getX() + xVelocity, getY() + yVelocity);
     }
 }
