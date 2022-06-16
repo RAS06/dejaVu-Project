@@ -3,5 +3,4 @@ comment0.target=roomOne
 comment0.text=\r\n\ @Riz\ \r\n\ @0.0.1\r\n
 comment1.params=
 comment1.target=roomOne()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
 numComments=2
