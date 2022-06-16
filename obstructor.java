@@ -14,13 +14,15 @@ public class obstructor extends Actor
     {
         obstruct();
     }
-    public obstructor(String side, int initPotency) {
+    public obstructor(String side, String image, int initPotency) {
         wall = side;
         potency = initPotency;
+        this.setImage(image);
     }
-    public obstructor(String side){
+    public obstructor(String side, String image){
         wall = side;
-        potency = 210;
+        potency = 3;
+        this.setImage(image);
     }
     public void obstruct(){
         if(this.isTouching(champion.class)){
@@ -32,11 +34,11 @@ public class obstructor extends Actor
                 for(Actor a: this.getWorld().getObjects(champion.class)){
                 a.setLocation(champion.getChampX() + potency, champion.getChampY());
                 }
-            }else if(wall.equals("up")){
+            }else if(wall.equals("top")){
                 for(Actor a: this.getWorld().getObjects(champion.class)){
                 a.setLocation(champion.getChampX(), champion.getChampY() + potency);
                 }
-            } else if(wall.equals("down")){
+            } else if(wall.equals("bottom")){
                 for(Actor a: this.getWorld().getObjects(champion.class)){
                 a.setLocation(champion.getChampX() , champion.getChampY() - potency);
                 }
