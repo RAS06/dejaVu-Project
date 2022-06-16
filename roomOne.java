@@ -11,6 +11,7 @@ public class roomOne extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+        
     public roomOne()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -18,8 +19,14 @@ public class roomOne extends World
         addObject(new champion(), 200, 200);
         addObject(new key(), 500, 500);
         
-        for(int i = 0; i < 700; i++){
-            addObject(new obstructor("right"), 720, i);
+        for(int i = -1; i < 25; i++){
+            addObject(new obstructor("right", "vertBorderControl.png"), 720, i * 30);
+            addObject(new obstructor("left", "vertBorderControl.png"), 30, i * 30);
+            addObject(new obstructor("top", "horizBorderControl.png"), i * 30, 30);
+            addObject(new obstructor("bottom", "horizBorderControl.png"), i * 30, 720);
+        }
+        for(int i = 0; i < 5; i++){
+            addObject(new teleporter(new roomTwo(),"horizBorderControl.png", 375, 720), 275 + 30 * i, 50);
         }
     }
 }
