@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;  //Let's see if I can solve my problems with an ArrayList.
 
 /**
  * @Riz 
@@ -12,12 +13,16 @@ public class roomOne extends World
      * 
      */
     //public static World worldOne = getWorld();
-    public static World worldTwo = new roomTwo();
+    public static ArrayList<World> worlds = new ArrayList<World>();
+    private boolean added = false;
     public roomOne()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        
         super(750, 750, 1);
-        addObject(new champion(), 200, 200);
+        
+        champion c = new champion();
+        addObject(c, 200, 200);
         addObject(new key(), 500, 500);
         showText("roomOne", 500, 500);
         
