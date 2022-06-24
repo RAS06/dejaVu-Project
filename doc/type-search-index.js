@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"<Unnamed>","l":"champion"},{"p":"<Unnamed>","l":"interactable"},{"p":"<Unnamed>","l":"key"},{"p":"<Unnamed>","l":"obstructor"},{"p":"<Unnamed>","l":"roomOne"},{"p":"<Unnamed>","l":"roomTwo"},{"p":"<Unnamed>","l":"sign"},{"p":"<Unnamed>","l":"teleporter"}]

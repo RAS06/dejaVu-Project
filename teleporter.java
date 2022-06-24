@@ -30,11 +30,17 @@ public class teleporter extends Actor
             Greenfoot.setWorld(target);
             if(dir.equals("horizBorderControl.png")){
                 for(Actor a: target.getObjects(champion.class)){
-                    a.setLocation(champion.getChampX(), target.getHeight() - champion.getChampY());
+                    int toMiddle;
+                    if(champion.getChampY() < 300){toMiddle = -50;} else { toMiddle = 50;}
+                    
+                    a.setLocation(champion.getChampX(), target.getHeight() - champion.getChampY() + toMiddle);
                 }
             } else {
                 for(Actor a: target.getObjects(champion.class)){
-                    a.setLocation(target.getWidth() - champion.getChampX(), champion.getChampY());
+                    int toMiddle;
+                    if(champion.getChampX() < 300){toMiddle = 50;} else { toMiddle = -50;}
+                    
+                    a.setLocation(target.getWidth() - champion.getChampX() + toMiddle, champion.getChampY());
                 }
             }
         }
