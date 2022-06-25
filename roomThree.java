@@ -36,6 +36,9 @@ public class roomThree extends World
         for(int i = 0; i < 5; i++){
             addObject(new teleporter(worldMaster.getWorlds().get(3),"vertBorderControl.png"), 50, 250 + 30 * i);
         }
+        for(int i = 0; i < 5; i++){
+            addObject(new teleporter(worldMaster.getWorlds().get(4),"vertBorderControl.png"), 700, 250 + 30 * i);
+        }
     }
     public String toString(){
         return "Room Three";

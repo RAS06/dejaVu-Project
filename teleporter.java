@@ -45,4 +45,23 @@ public class teleporter extends Actor
             }
         }
     }
+    /* 
+    Teleporation gates, where "x" is the assigned number of the world on the Miro Board minus 1. 
+       North Gate:
+            for(int i = 0; i < 5; i++){ //N
+                addObject(new teleporter(worldMaster.getWorlds().get(x),"horizBorderControl.png"), 275 + 30 * i, 50);
+            }
+       South Gate:
+            for(int i = 0; i < 5; i++){ //S
+                addObject(new teleporter(worldMaster.getWorlds().get(x),"horizBorderControl.png"), 275 + 30 * i, 700);
+            }
+       East Gate:
+            for(int i = 0; i < 5; i++){ //E
+                addObject(new teleporter(worldMaster.getWorlds().get(x),"vertBorderControl.png"), 700, 250 + 30 * i);
+            }
+       West Gate:
+            for(int i = 0; i < 5; i++){ //W
+                addObject(new teleporter(worldMaster.getWorlds().get(x),"vertBorderControl.png"), 50, 250 + 30 * i);
+            }
+    */
 }

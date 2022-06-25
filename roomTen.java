@@ -30,8 +30,8 @@ public class roomTen extends World
             addObject(new obstructor("top", "horizBorderControl.png"), i * 30, 30);
             addObject(new obstructor("bottom", "horizBorderControl.png"), i * 30, 720);
         }
-        for(int i = 0; i < 5; i++){
-            //addObject(new teleporter(worldMaster.getWorlds().get(2),"vertBorderControl.png"), 700, 250 + 30 * i);
+        for(int i = 0; i < 5; i++){ //N
+            addObject(new teleporter(worldMaster.getWorlds().get(14),"horizBorderControl.png"), 0 + 30 * i, 50);
         }
     }
     public String toString(){

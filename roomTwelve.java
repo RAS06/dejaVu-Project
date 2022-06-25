@@ -15,9 +15,9 @@ public class roomTwelve extends World
      */
     public roomTwelve()
     {    
-        super(750, 750, 1); 
+        super(250, 750, 1); 
         addObject(new champion(), 375, 700);
-        showText("roomTwelve", 300, 500);
+        showText("roomTwelve", 125, 500);
         if(!added){
             worldMaster.addWorld(11, this);
             added = true;
@@ -30,8 +30,11 @@ public class roomTwelve extends World
             addObject(new obstructor("top", "horizBorderControl.png"), i * 30, 30);
             addObject(new obstructor("bottom", "horizBorderControl.png"), i * 30, 720);
         }
-        for(int i = 0; i < 5; i++){
-            //addObject(new teleporter(worldMaster.getWorlds().get(2),"vertBorderControl.png"), 700, 250 + 30 * i);
+        for(int i = 0; i < 5; i++){ //S
+                addObject(new teleporter(worldMaster.getWorlds().get(4),"horizBorderControl.png"), 0 + 30 * i, 700);
+        }
+        for(int i = 0; i < 5; i++){ //N
+                addObject(new teleporter(worldMaster.getWorlds().get(5),"horizBorderControl.png"), 0 + 30 * i, 50);
         }
     }
     public String toString(){
