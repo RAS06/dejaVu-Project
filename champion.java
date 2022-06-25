@@ -83,7 +83,7 @@ public class champion extends Actor
             }
         }
         movementTick++;
-        System.out.println(movementTick);
+        //System.out.println(worldMaster.getWorlds() + "   " + worldMaster.getWorlds().size());
         if(movementTick >= 21){movementTick = 0;}
     }
     public void interact(){
