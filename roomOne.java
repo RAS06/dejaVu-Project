@@ -13,7 +13,7 @@ public class roomOne extends World
      * 
      */
     //public static World worldOne = getWorld();
-    public static ArrayList<World> worlds = new ArrayList<World>();
+    //public static ArrayList<World> worlds = new ArrayList<World>();
     private static boolean added = false;
     public static World worldTwo = new roomTwo();
 
@@ -21,11 +21,9 @@ public class roomOne extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.  
         super(750, 750, 1);
-        
-        worldMaster w = new worldMaster();
-        
+                
         if(!added){
-            w.addWorld(0, this);
+            worldMaster.addWorld(0, this);
             added = true;
             Greenfoot.setWorld(new roomTwo());
         }
@@ -36,7 +34,7 @@ public class roomOne extends World
         if(!champion.gotKey){
             addObject(new key(), 500, 500);
         }
-        //showText("roomOne", 500, 500);
+        showText("roomOne", 300, 500);
         
         for(int i = -1; i < 25; i++){
             addObject(new obstructor("right", "vertBorderControl.png"), 720, i * 30);
@@ -45,7 +43,10 @@ public class roomOne extends World
             addObject(new obstructor("bottom", "horizBorderControl.png"), i * 30, 720);
         }
         for(int i = 0; i < 5; i++){
-            addObject(new teleporter(w.getWorlds().get(1),"horizBorderControl.png", 375, 720), 275 + 30 * i, 50);
+            addObject(new teleporter(worldMaster.getWorlds().get(1),"horizBorderControl.png"), 275 + 30 * i, 50);
         }
+    }
+    public String toString(){
+        return "Room One";
     }
 }
