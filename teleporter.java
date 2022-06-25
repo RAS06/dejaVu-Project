@@ -20,7 +20,7 @@ public class teleporter extends Actor
     {
         teleport();
     }
-    public teleporter(World targetLocation, String image, int moveToX, int moveToY){
+    public teleporter(World targetLocation, String image){
         target = targetLocation;
         this.setImage(image);
         dir = image;
@@ -38,7 +38,7 @@ public class teleporter extends Actor
             } else {
                 for(Actor a: target.getObjects(champion.class)){
                     int toMiddle;
-                    if(champion.getChampX() < 300){toMiddle = 50;} else { toMiddle = -50;}
+                    if(champion.getChampX() < 300){toMiddle = -50;} else { toMiddle = 50;}
                     
                     a.setLocation(target.getWidth() - champion.getChampX() + toMiddle, champion.getChampY());
                 }
