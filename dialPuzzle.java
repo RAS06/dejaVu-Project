@@ -20,6 +20,6 @@ public class dialPuzzle extends World
         addObject(new dial(), 150, 300);
         addObject(new dial(), 350, 300);
         addObject(new dial(), 550, 300);
-        prepare();
+        //prepare();
     }
-    /**
+}
