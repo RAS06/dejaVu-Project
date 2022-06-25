@@ -15,9 +15,7 @@ public class worldMaster extends Actor
      */
     private static ArrayList<World> worlds = new ArrayList<World>();
     public void act()
-    {
-        //
-    }
+    {}
     public worldMaster(){
         
     }

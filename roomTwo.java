@@ -23,13 +23,16 @@ public class roomTwo extends World
         if(!added){
             w.addWorld(1, this);
             added = true;
-            Greenfoot.setWorld(w.getWorlds().get(0));
+            Greenfoot.setWorld(new roomThree());
         }
         
         addObject(new champion(), 100, 100);
-        showText("roomTwo", 500, 500);
+        //showText("roomTwo", 500, 500);
         for(int i = 0; i < 5; i++){
-            addObject(new teleporter(w.getWorlds().get(0),"horizBorderControl.png", 375, 720), 275 + 30 * i, 725);
+            addObject(new teleporter(w.getWorlds().get(0),"horizBorderControl.png", 375, 720), 275 + (30 * i), 725);
+        }
+        for(int i = 0; i < 5; i++){
+            addObject(new teleporter(w.getWorlds().get(2),"horizBorderControl.png", 375, 720), 275 + (30 * i), 50);
         }
     }
 }

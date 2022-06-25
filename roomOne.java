@@ -32,8 +32,11 @@ public class roomOne extends World
         
         champion c = new champion();
         addObject(c, 200, 200);
-        addObject(new key(), 500, 500);
-        showText("roomOne", 500, 500);
+        
+        if(!champion.gotKey){
+            addObject(new key(), 500, 500);
+        }
+        //showText("roomOne", 500, 500);
         
         for(int i = -1; i < 25; i++){
             addObject(new obstructor("right", "vertBorderControl.png"), 720, i * 30);
