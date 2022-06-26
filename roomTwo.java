@@ -9,7 +9,6 @@ import java.util.*;
  */
 public class roomTwo extends World
 {
-    public static World worldOne = new roomOne();
     private static boolean added = false;
     /**
      * Constructor for objects of class roomTwo.

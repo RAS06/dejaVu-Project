@@ -15,7 +15,6 @@ public class roomOne extends World
     //public static World worldOne = getWorld();
     //public static ArrayList<World> worlds = new ArrayList<World>();
     private static boolean added = false;
-    public static World worldTwo = new roomTwo();
 
     public roomOne()
     {    
@@ -31,9 +30,8 @@ public class roomOne extends World
         champion c = new champion();
         addObject(c, 200, 200);
         
-        if(!champion.gotKey){
-            addObject(new key(), 500, 500);
-        }
+        addObject(new key(), 500, 500);
+        
         showText("roomOne", 300, 500);
         
         for(int i = -1; i < 25; i++){
