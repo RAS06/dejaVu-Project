@@ -33,9 +33,11 @@ public class roomThirteenAndThreeQuarters extends World
         for(int i = 0; i < 5; i++){ //N
                 addObject(new teleporter(worldMaster.getWorlds().get(13),"horizBorderControl.png"), 0 + 30 * i, 50);
         }
+        addObject(new door("door(Top).png"), 125, 50);
         for(int i = 0; i < 5; i++){ //S
                 addObject(new teleporter(worldMaster.getWorlds().get(9),"horizBorderControl.png"), 0 + 30 * i, 700);
         }
+        addObject(new door("door(Top).png"), 125, 700);
     }
     public String toString(){
         return "Room ThirteenAndAHalf";

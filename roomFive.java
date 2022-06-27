@@ -33,15 +33,19 @@ public class roomFive extends World
         for(int i = 0; i < 5; i++){ //W
             addObject(new teleporter(worldMaster.getWorlds().get(2),"vertBorderControl.png"), 50, 250 + 30 * i);
         }
+        addObject(new door("door(Top).png"), 50, 375);
         for(int i = 0; i < 5; i++){ //E
             addObject(new teleporter(worldMaster.getWorlds().get(7),"vertBorderControl.png"), 700, 250 + 30 * i);
         }
+        addObject(new door("door(Top).png"), 700, 375);
         for(int i = 0; i < 5; i++){ //N
             addObject(new teleporter(worldMaster.getWorlds().get(11),"horizBorderControl.png"), 0 + 30 * i, 50);
         }
+        addObject(new door("door(Top).png"), 90, 50);
         for(int i = 0; i < 5; i++){ //S
             addObject(new teleporter(worldMaster.getWorlds().get(12),"horizBorderControl.png"), 0 + 30 * i, 700);
         }
+        addObject(new door("door(Top).png"), 90, 700);
     }
     public String toString(){
         return "Room Five";

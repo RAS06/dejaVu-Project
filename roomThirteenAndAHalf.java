@@ -34,12 +34,14 @@ public class roomThirteenAndAHalf extends World
         for(int i = 0; i < 5; i++){ //N
                 addObject(new teleporter(worldMaster.getWorlds().get(12),"horizBorderControl.png"), 0 + 30 * i, 50);
         }
+        addObject(new door("door(Top).png"), 125, 50);
         for(int i = 0; i < 5; i++){ //S
                 addObject(new teleporter(worldMaster.getWorlds().get(14),"horizBorderControl.png"), 0 + 30 * i, 700);
         }
+        addObject(new door("door(Top).png"), 125, 700);
         for(int i = 0; i < 5; i++){ //E
                 addObject(new teleporter(worldMaster.getWorlds().get(10),"vertBorderControl.png"), 200, 250 + 30 * i);
-            }
+        }
     }
     public String toString(){
         return "Room ThirteenAndAHalf";

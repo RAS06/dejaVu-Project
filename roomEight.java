@@ -34,9 +34,11 @@ public class roomEight extends World
         for(int i = 0; i < 5; i++){ //W
                 addObject(new teleporter(worldMaster.getWorlds().get(4),"vertBorderControl.png"), 50, 250 + 30 * i);
         }
+        addObject(new door("door(Top).png"), 50, 375);
         for(int i = 0; i < 5; i++){ //E
                 addObject(new teleporter(worldMaster.getWorlds().get(8),"vertBorderControl.png"), 700, 250 + 30 * i);
         }
+        addObject(new door("door(Top).png"), 700, 375);
     }
     public String toString(){
         return "Room Eight";

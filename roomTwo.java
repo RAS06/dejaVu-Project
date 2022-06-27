@@ -37,9 +37,12 @@ public class roomTwo extends World
         for(int i = 0; i < 5; i++){
             addObject(new teleporter(worldMaster.getWorlds().get(0),"horizBorderControl.png"), 300 + (30 * i), 710);
         }
+        addObject(new door("door(Top).png"), 365, 700);
+
         for(int i = 0; i < 5; i++){
             addObject(new teleporter(worldMaster.getWorlds().get(2),"horizBorderControl.png"), 300 + (30 * i), 70);
         }
+        addObject(new door("door(Top).png"), 365, 50);
     }
     public String toString(){
         return "Room Two";
