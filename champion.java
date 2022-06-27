@@ -25,6 +25,7 @@ public class champion extends Actor
         if(!locked) {
             move();
         }
+        if(Greenfoot.isKeyDown("u")){showTheMap();}
         interact();
         recordLocation();
         //Used to move the champion from another class. 
@@ -108,5 +109,9 @@ public class champion extends Actor
     //Move this.champion from another class.
     public void moveChampion() {
         setLocation(getX() + xVelocity, getY() + yVelocity);
+    }
+    
+    public void showTheMap(){
+        System.out.println(worldMaster.getWorlds());
     }
 }
