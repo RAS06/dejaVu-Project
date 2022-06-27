@@ -24,6 +24,8 @@ public class roomOne extends World
         if(!added){
             worldMaster.addWorld(0, this);
             added = true;
+            addObject(new champion(), 200, 200);
+            addObject(new key(), 500, 500);
             Greenfoot.setWorld(new roomTwo());
         }
         
@@ -44,8 +46,7 @@ public class roomOne extends World
         }
         addObject(new door("door(Top).png"), 365, 50);
         
-        champion c = new champion();
-        addObject(c, 200, 200);
+        addObject(new champion(), 200, 200);
     }
     public String toString(){
         return "Room One";

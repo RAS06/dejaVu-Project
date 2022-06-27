@@ -11,11 +11,12 @@ public class champion extends Actor
      * Act - do whatever the champion wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+        public static boolean gotKey = false;
         private boolean locked = false;
         private boolean noLongerTouching = false;
+        private boolean unlockedDoor = false; 
         private static int currX;
         private static int currY;
-        public static boolean gotKey = false;
         private static int xVelocity;
         private static int yVelocity;
         private int movementTick;
@@ -25,7 +26,13 @@ public class champion extends Actor
         if(!locked) {
             move();
         }
+        
+        //<Dev Controls>
         if(Greenfoot.isKeyDown("u")){showTheMap();}
+        if(Greenfoot.isKeyDown("r") && Greenfoot.isKeyDown("=")){Greenfoot.setWorld(new roomOne());}
+        if(Greenfoot.isKeyDown("p")){System.out.println("gotKey? " + gotKey +" unlockedDoor? " + unlockedDoor);}
+        //</Dev Controls>
+        
         interact();
         recordLocation();
         //Used to move the champion from another class. 
@@ -92,8 +99,18 @@ public class champion extends Actor
             this.removeTouching(key.class);
             this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
             gotKey = true;
-            System.out.println(gotKey);
+            System.out.println(gotKey);  
+            
+            if(gotKey && !unlockedDoor){
+                unlockedDoor = true;
+                for(int i = 0; i < 5; i++){ 
+                        worldMaster.getWorlds().get(2).addObject(new teleporter(worldMaster.getWorlds().get(3),"vertBorderControl.png"), 50, 250 + 30 * i);
+                        worldMaster.getWorlds().get(2).removeObjects(worldMaster.getWorlds().get(2).getObjects(lock.class));
+                }
+            }
+            
         }
+        
     }
     public void recordLocation(){
         currX = this.getX();
