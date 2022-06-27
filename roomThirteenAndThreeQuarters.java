@@ -40,6 +40,6 @@ public class roomThirteenAndThreeQuarters extends World
         addObject(new door("door(Top).png"), 125, 700);
     }
     public String toString(){
-        return "Room ThirteenAndAHalf";
+        return "Room ThirteenAndThreeQuarters";
     }
 }
