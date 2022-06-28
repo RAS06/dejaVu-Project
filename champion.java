@@ -14,12 +14,13 @@ public class champion extends Actor
         public static boolean gotKey = false;
         private boolean locked = false;
         private boolean noLongerTouching = false;
-        private boolean unlockedDoor = false; 
+        private static boolean unlockedDoor = false; 
         private static int currX;
         private static int currY;
         private static int xVelocity;
         private static int yVelocity;
         private int movementTick;
+        private static int shardCount;
     
     public void act()
     {
@@ -29,7 +30,7 @@ public class champion extends Actor
         
         //<Dev Controls>
         if(Greenfoot.isKeyDown("u")){showTheMap();}
-        if(Greenfoot.isKeyDown("r") && Greenfoot.isKeyDown("=")){Greenfoot.setWorld(new roomOne());}
+        if(Greenfoot.isKeyDown("r") && Greenfoot.isKeyDown("=")){resetTheMap();}
         if(Greenfoot.isKeyDown("p")){System.out.println("gotKey? " + gotKey +" unlockedDoor? " + unlockedDoor);}
         //</Dev Controls>
         
@@ -130,5 +131,12 @@ public class champion extends Actor
     
     public void showTheMap(){
         System.out.println(worldMaster.getWorlds());
+    }
+    
+    public void resetTheMap(){
+        gotKey = false;
+        unlockedDoor = false;
+        shardCount = 0;
+        Greenfoot.setWorld(new roomOne());
     }
 }
