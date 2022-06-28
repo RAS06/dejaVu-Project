@@ -18,6 +18,7 @@ public class roomThirteenAndAHalf extends World
     {    
         super(250, 750, 1); 
         addObject(new champion(), 375, 700);
+        addObject(new queryTracker(), 10, 10);
         showText("roomThirteenAndAHalf", 125, 500);
         if(!added){
             worldMaster.addWorld(13, this);
@@ -40,7 +41,7 @@ public class roomThirteenAndAHalf extends World
         }
         addObject(new door("door(Top).png"), 125, 700);
         for(int i = 0; i < 5; i++){ //E
-                addObject(new teleporter(worldMaster.getWorlds().get(10),"vertBorderControl.png"), 200, 250 + 30 * i);
+                //addObject(new teleporter(worldMaster.getWorlds().get(10),"vertBorderControl.png"), 200, 250 + 30 * i);
         }
     }
     public String toString(){
