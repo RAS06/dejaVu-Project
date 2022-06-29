@@ -12,7 +12,7 @@ public class champion extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
         public static boolean gotKey = false;
-        private boolean locked = false;
+        private static boolean locked = false;
         private boolean noLongerTouching = false;
         private static boolean unlockedDoor = false; 
         private static int currX;
@@ -32,6 +32,7 @@ public class champion extends Actor
         if(Greenfoot.isKeyDown("u")){showTheMap();}
         if(Greenfoot.isKeyDown("r") && Greenfoot.isKeyDown("=")){resetTheMap();}
         if(Greenfoot.isKeyDown("p")){System.out.println("gotKey? " + gotKey +" unlockedDoor? " + unlockedDoor);}
+        if(Greenfoot.isKeyDown("l")){unlockChampion();}
         //</Dev Controls>
         
         interact();
@@ -100,7 +101,8 @@ public class champion extends Actor
             this.removeTouching(key.class);
             this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
             gotKey = true;
-            System.out.println(gotKey);  
+            System.out.println(gotKey);
+            this.getWorld().addObject(new chatDialougeQuerySelector(1), 375, 375);
             
             if(gotKey && !unlockedDoor){
                 unlockedDoor = true;
@@ -127,16 +129,16 @@ public class champion extends Actor
     //Move this.champion from another class.
     public void moveChampion() {
         setLocation(getX() + xVelocity, getY() + yVelocity);
-    }
-    
+    } 
     public void showTheMap(){
         System.out.println(worldMaster.getWorlds());
     }
-    
     public void resetTheMap(){
         gotKey = false;
         unlockedDoor = false;
         shardCount = 0;
         Greenfoot.setWorld(new roomOne());
     }
+    public static void lockChampion(){locked = true;}
+    public static void unlockChampion(){locked = false;}
 }
