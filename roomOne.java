@@ -45,8 +45,8 @@ public class roomOne extends World
             addObject(new teleporter(worldMaster.getWorlds().get(1),"horizBorderControl.png"), 275 + 30 * i, 50);
         }
         addObject(new door("door(Top).png"), 365, 50);
-        
         addObject(new champion(), 200, 200);
+        
     }
     public String toString(){
         return "Room One";
