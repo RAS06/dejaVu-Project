@@ -22,13 +22,63 @@ public class chatDialougeQuerySelector extends Actor
     }
     public chatDialougeQuerySelector(int formIn){form = formIn; setImage("debugTesterImage.png");}
     public void showQuery(){
+            //I think there is a much better way of doing this...
+            //Maybe I'll do it later. 
         if(form == 1){       
             champion.lockChampion();
             ArrayList<String> query = new ArrayList<String>();
-            query.add("youGotAKey.png");
-            query.add("iDontHaveToTellYouThat.png");
-            query.add("youLookStupid.png");
+            query.add("youGotAKey.jpg");
+            query.add("iDontHaveToTellYouThat.jpg");
+            query.add("youLookStupid.jpg");
             int queryNumber = query.size();
+            if(currTargetDisplay < queryNumber){
+                setImage(query.get(currTargetDisplay));
+            } else{
+                champion.unlockChampion();
+                this.getWorld().removeObject(this);
+            }
+        }
+        if(form == 2){
+            champion.lockChampion();
+            ArrayList<String> query = new ArrayList<String>();
+            
+             int queryNumber = query.size();
+            if(currTargetDisplay < queryNumber){
+                setImage(query.get(currTargetDisplay));
+            } else{
+                champion.unlockChampion();
+                this.getWorld().removeObject(this);
+            }
+        }
+        if(form == 3){
+            champion.lockChampion();
+            ArrayList<String> query = new ArrayList<String>();
+            
+             int queryNumber = query.size();
+            if(currTargetDisplay < queryNumber){
+                setImage(query.get(currTargetDisplay));
+            } else{
+                champion.unlockChampion();
+                this.getWorld().removeObject(this);
+            }
+        }
+        if(form == 4){
+            champion.lockChampion();
+            ArrayList<String> query = new ArrayList<String>();
+            
+             int queryNumber = query.size();
+            if(currTargetDisplay < queryNumber){
+                setImage(query.get(currTargetDisplay));
+            } else{
+                champion.unlockChampion();
+                this.getWorld().removeObject(this);
+            }
+        }
+        if(form == 5){
+            champion.lockChampion();
+            ArrayList<String> query = new ArrayList<String>();
+            
+             int queryNumber = query.size();
             if(currTargetDisplay < queryNumber){
                 setImage(query.get(currTargetDisplay));
             } else{
@@ -39,6 +89,6 @@ public class chatDialougeQuerySelector extends Actor
         if(Greenfoot.isKeyDown("space") && !justPressed){
             justPressed = true;
             currTargetDisplay++;
-        } else{justPressed = false;}
+        } else if(!Greenfoot.isKeyDown("space")){justPressed = false;}
     }
 }
