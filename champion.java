@@ -102,7 +102,7 @@ public class champion extends Actor
             this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
             gotKey = true;
             System.out.println(gotKey);
-            this.getWorld().addObject(new chatDialougeQuerySelector(1), 375, 375);
+            this.getWorld().addObject(new chatDialougeQuerySelector(1), 375, 600);
             
             if(gotKey && !unlockedDoor){
                 unlockedDoor = true;
