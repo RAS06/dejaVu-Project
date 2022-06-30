@@ -13,6 +13,7 @@ public class champion extends Actor
      */
         public static boolean gotKey = false;
         private static boolean locked = false;
+        private static boolean hasFlower = false;
         private boolean noLongerTouching = false;
         private static boolean unlockedDoor = false; 
         private static int currX;
@@ -32,7 +33,7 @@ public class champion extends Actor
         if(Greenfoot.isKeyDown("u")){showTheMap();}
         if(Greenfoot.isKeyDown("r") && Greenfoot.isKeyDown("=")){resetTheMap();}
         if(Greenfoot.isKeyDown("p")){System.out.println("gotKey? " + gotKey +" unlockedDoor? " + unlockedDoor);}
-        if(Greenfoot.isKeyDown("l")){unlockChampion();}
+        if(Greenfoot.isKeyDown("l")){unlockChampion(); this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));}
         //</Dev Controls>
         
         interact();
@@ -111,9 +112,12 @@ public class champion extends Actor
                         worldMaster.getWorlds().get(2).removeObjects(worldMaster.getWorlds().get(2).getObjects(lock.class));
                 }
             }
-            
         }
-        
+        if(this.isTouching(rose.class) && Greenfoot.isKeyDown("e")){
+            this.removeTouching(rose.class);
+            this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
+            hasFlower = true;
+        }
     }
     public void recordLocation(){
         currX = this.getX();
@@ -141,4 +145,5 @@ public class champion extends Actor
     }
     public static void lockChampion(){locked = true;}
     public static void unlockChampion(){locked = false;}
+    public static void collectFlower(){hasFlower = true;}
 }
