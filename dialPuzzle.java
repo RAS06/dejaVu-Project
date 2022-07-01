@@ -21,13 +21,13 @@ public class dialPuzzle extends World
         if(!added){
             worldMaster.addWorld(15, this);
             added = true;
-            worldMaster.getWorlds().get(15).addObject(new champion(), 375, 700);
-            Greenfoot.setWorld(worldMaster.getWorlds().get(0));
+            Greenfoot.setWorld(new colorPuzzle());
         }
         addObject(new dial(), 150, 300);
         addObject(new dial(), 350, 300);
         addObject(new dial(), 550, 300);
         //prepare();
+        addObject(new teleportationButton("pressBToGoBack.png", worldMaster.getWorlds().get(4)), 600, 725);
     }
     public String toString(){
         return "Dial Puzzle";
