@@ -12,6 +12,7 @@ public class champion extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
         public static boolean gotKey = false;
+        public static int shardCount;
         private static boolean locked = false;
         private static boolean hasFlower = false;
         private boolean noLongerTouching = false;
@@ -21,7 +22,6 @@ public class champion extends Actor
         private static int xVelocity;
         private static int yVelocity;
         private int movementTick;
-        private static int shardCount;
     
     public void act()
     {
@@ -117,8 +117,10 @@ public class champion extends Actor
             this.removeTouching(rose.class);
             this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
             hasFlower = true;
+            this.getWorld().addObject(new chatDialougeQuerySelector(2), 375, 375);
         }
     }
+    
     public void recordLocation(){
         currX = this.getX();
         currY = this.getY();
@@ -145,5 +147,4 @@ public class champion extends Actor
     }
     public static void lockChampion(){locked = true;}
     public static void unlockChampion(){locked = false;}
-    public static void collectFlower(){hasFlower = true;}
 }
