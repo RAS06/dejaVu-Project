@@ -22,7 +22,7 @@ public class roomThirteenAndThreeQuarters extends World
             worldMaster.addWorld(14, this);
             added = true;
             worldMaster.getWorlds().get(14).addObject(new champion(), 375, 700);
-            Greenfoot.setWorld(worldMaster.getWorlds().get(0));
+            Greenfoot.setWorld(new dialPuzzle());
         }
         for(int i = -1; i < 25; i++){
             addObject(new obstructor("right", "vertBorderControl.png"), 720, i * 30);
