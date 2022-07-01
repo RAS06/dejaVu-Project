@@ -41,8 +41,8 @@ public class chatDialougeQuerySelector extends Actor
         if(form == 2){
             champion.lockChampion();
             ArrayList<String> query = new ArrayList<String>();
-            
-             int queryNumber = query.size();
+            query.add("youFoundARose.jpg");
+            int queryNumber = query.size();
             if(currTargetDisplay < queryNumber){
                 setImage(query.get(currTargetDisplay));
             } else{
