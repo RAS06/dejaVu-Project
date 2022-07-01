@@ -21,7 +21,6 @@ public class colorPuzzle extends World
         if(!added){
             worldMaster.addWorld(16, this);
             added = true;
-            worldMaster.getWorlds().get(16).addObject(new champion(), 375, 700);
             Greenfoot.setWorld(worldMaster.getWorlds().get(0));
         }
     }
