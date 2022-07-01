@@ -46,6 +46,7 @@ public class roomFive extends World
             addObject(new teleporter(worldMaster.getWorlds().get(12),"horizBorderControl.png"), 0 + 30 * i, 700);
         }
         addObject(new door("door(Top).png"), 90, 700);
+        addObject(new terminal(worldMaster.getWorlds().get(15)), 600, 150);
     }
     public String toString(){
         return "Room Five";
