@@ -119,6 +119,12 @@ public class champion extends Actor
             hasFlower = true;
             this.getWorld().addObject(new chatDialougeQuerySelector(2), 375, 375);
         }
+        if(this.isTouching(shard.class) && Greenfoot.isKeyDown("e")){
+            this.removeTouching(shard.class);
+            this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
+            shardCount++;
+            //this.getWorld().addObject(new chatDialougeQuerySelector(2), 375, 375);
+        }
     }
     
     public void recordLocation(){
