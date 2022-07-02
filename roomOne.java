@@ -44,7 +44,7 @@ public class roomOne extends World
         for(int i = 0; i < 5; i++){
             addObject(new teleporter(worldMaster.getWorlds().get(1),"horizBorderControl.png"), 275 + 30 * i, 50);
         }
-        addObject(new door("door(Top).png"), 365, 50);
+        addObject(new door("topDoor.PNG"), 365, 25);
         addObject(new champion(), 200, 200);
         
     }

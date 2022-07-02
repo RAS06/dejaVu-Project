@@ -33,7 +33,7 @@ public class roomTen extends World
         for(int i = 0; i < 5; i++){ //N
             addObject(new teleporter(worldMaster.getWorlds().get(14),"horizBorderControl.png"), 0 + 30 * i, 50);
         }
-        addObject(new door("door(Top).png"), 125, 50);
+        addObject(new door("topDoor.PNG"), 125, 25);
         addObject(new hints("roomTenKeyHint.jpg"), 375, 600);
     }
     public String toString(){

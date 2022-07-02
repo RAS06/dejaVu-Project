@@ -34,7 +34,7 @@ public class roomNine extends World
         for(int i = 0; i < 5; i++){ //W
                 addObject(new teleporter(worldMaster.getWorlds().get(7),"vertBorderControl.png"), 50, 250 + 30 * i);
         }
-        addObject(new door("door(Top).png"), 50, 375);
+        addObject(new door("leftSideDoor.PNG"), 70, 375);
         addObject(new vent(worldMaster.getWorlds().get(0)), 375, 700);
     }
     public String toString(){
