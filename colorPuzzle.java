@@ -23,6 +23,7 @@ public class colorPuzzle extends World
             added = true;
             Greenfoot.setWorld(worldMaster.getWorlds().get(0));
         }
+        addObject(new teleportationButton("pressBToGoBack.png", worldMaster.getWorlds().get(7)), 600, 725);
     }
     public String toString(){
         return "Color Puzzle";
