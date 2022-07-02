@@ -59,6 +59,6 @@ public class queryTracker extends Actor
         }
         
         timer--;
-        System.out.println("timer: " + timer + " i: " + i);
+        //System.out.println("timer: " + timer + " i: " + i);
     }
 }
