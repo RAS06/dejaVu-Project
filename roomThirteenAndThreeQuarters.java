@@ -15,7 +15,7 @@ public class roomThirteenAndThreeQuarters extends World
      */
     public roomThirteenAndThreeQuarters()
     {    
-        super(250, 750, 1); 
+        super(750, 750, 1); 
         addObject(new champion(), 375, 700);
         showText("roomThirteenAndThreeQuarters", 125, 500);
         if(!added){
@@ -38,6 +38,7 @@ public class roomThirteenAndThreeQuarters extends World
                 addObject(new teleporter(worldMaster.getWorlds().get(9),"horizBorderControl.png"), 0 + 30 * i, 700);
         }
         addObject(new door("bottomDoor.PNG"), 125, 725);
+        addObject(new chatDialougeQuerySelector(6), 375, 600);
     }
     public String toString(){
         return "Room ThirteenAndThreeQuarters";

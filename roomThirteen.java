@@ -16,7 +16,7 @@ public class roomThirteen extends World
     private static boolean added = false;
     public roomThirteen()
     {    
-        super(250, 750, 1); 
+        super(750, 750, 1); 
         addObject(new champion(), 375, 700);
         showText("roomThirteen", 125, 500);
         if(!added){
@@ -32,13 +32,14 @@ public class roomThirteen extends World
             addObject(new obstructor("bottom", "horizBorderControl.png"), i * 30, 720);
         }
         for(int i = 0; i < 5; i++){ //N
-                addObject(new teleporter(worldMaster.getWorlds().get(4),"horizBorderControl.png"), 0 + 30 * i, 50);
+                addObject(new teleporter(worldMaster.getWorlds().get(4),"horizBorderControl.png"), 300 + 30 * i, 50);
         }
-        addObject(new door("topDoor.PNG"), 125, 25);
+        addObject(new door("topDoor.PNG"), 375, 25);
         for(int i = 0; i < 5; i++){ //S
-                addObject(new teleporter(worldMaster.getWorlds().get(13),"horizBorderControl.png"), 0 + 30 * i, 700);
+                addObject(new teleporter(worldMaster.getWorlds().get(13),"horizBorderControl.png"), 300 + 30 * i, 700);
         }
-        addObject(new door("bottomDoor.PNG"), 125, 725);
+        addObject(new door("bottomDoor.PNG"), 375, 725);
+        addObject(new chatDialougeQuerySelector(4), 375, 600);
     }
     public String toString(){
         return "Room Thirteen";

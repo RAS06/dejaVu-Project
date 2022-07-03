@@ -16,7 +16,7 @@ public class roomThirteenAndAHalf extends World
     private static boolean added = false;
     public roomThirteenAndAHalf()
     {    
-        super(250, 750, 1); 
+        super(750, 750, 1); 
         addObject(new champion(), 375, 700);
         addObject(new queryTracker(), 10, 10);
         showText("roomThirteenAndAHalf", 125, 500);
@@ -33,16 +33,17 @@ public class roomThirteenAndAHalf extends World
             addObject(new obstructor("bottom", "horizBorderControl.png"), i * 30, 720);
         }
         for(int i = 0; i < 5; i++){ //N
-                addObject(new teleporter(worldMaster.getWorlds().get(12),"horizBorderControl.png"), 0 + 30 * i, 50);
+                addObject(new teleporter(worldMaster.getWorlds().get(12),"horizBorderControl.png"), 300 + 30 * i, 50);
         }
-        addObject(new door("topDoor.PNG"), 125, 25);
+        addObject(new door("topDoor.PNG"), 375, 25);
         for(int i = 0; i < 5; i++){ //S
-                addObject(new teleporter(worldMaster.getWorlds().get(14),"horizBorderControl.png"), 0 + 30 * i, 700);
+                addObject(new teleporter(worldMaster.getWorlds().get(14),"horizBorderControl.png"), 300 + 30 * i, 700);
         }
-        addObject(new door("bottomDoor.PNG"), 125, 725);
+        addObject(new door("bottomDoor.PNG"), 375, 725);
         for(int i = 0; i < 5; i++){ //E
                 //addObject(new teleporter(worldMaster.getWorlds().get(10),"vertBorderControl.png"), 200, 250 + 30 * i);
         }
+        addObject(new chatDialougeQuerySelector(5), 375, 600);
     }
     public String toString(){
         return "Room ThirteenAndAHalf";
