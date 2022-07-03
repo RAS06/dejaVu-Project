@@ -33,7 +33,7 @@ public class roomThree extends World
         for(int i = 0; i < 5; i++){
             addObject(new teleporter(worldMaster.getWorlds().get(1),"horizBorderControl.png"), 275 + 30 * i, 710);
         }
-        addObject(new door("bottomDoor.PNG"), 375, 720);
+        addObject(new door("bottomDoor.PNG"), 354, 720);
         for(int i = 0; i < 5; i++){ //Lock this door. 
             //addObject(new teleporter(worldMaster.getWorlds().get(3),"vertBorderControl.png"), 50, 250 + 30 * i);
             addObject(new lock(), 75, 250 + 30 * i);

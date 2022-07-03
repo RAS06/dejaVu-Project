@@ -32,9 +32,9 @@ public class roomEleven extends World
             addObject(new obstructor("bottom", "horizBorderControl.png"), i * 30, 720);
         }
         for(int i = 0; i < 5; i++){ //W
-                addObject(new teleporter(worldMaster.getWorlds().get(13),"vertBorderControl.png"), 50, 250 + 30 * i);
+                addObject(new teleporter(worldMaster.getWorlds().get(13),"vertBorderControl.png"), 200, 250 + 30 * i);
         }
-        addObject(new door("door(Top).png"), 50, 375);
+        addObject(new door("leftSideDoor.PNG"), 200, 375);
     }
     public String toString(){
         return "Room Eleven";

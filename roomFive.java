@@ -39,13 +39,13 @@ public class roomFive extends World
         }
         addObject(new door("rightSideDoor.PNG"), 680, 375);
         for(int i = 0; i < 5; i++){ //N
-            addObject(new teleporter(worldMaster.getWorlds().get(11),"horizBorderControl.png"), 0 + 30 * i, 50);
+            addObject(new teleporter(worldMaster.getWorlds().get(11),"horizBorderControl.png"), 300 + 30 * i, 50);
         }
-        addObject(new door("topDoor.PNG"), 90, 25);
+        addObject(new door("topDoor.PNG"), 375, 25);
         for(int i = 0; i < 5; i++){ //S
-            addObject(new teleporter(worldMaster.getWorlds().get(12),"horizBorderControl.png"), 0 + 30 * i, 700);
+            addObject(new teleporter(worldMaster.getWorlds().get(12),"horizBorderControl.png"), 300 + 30 * i, 700);
         }
-        addObject(new door("bottomDoor.PNG"), 90, 720);
+        addObject(new door("bottomDoor.PNG"), 355, 720);
         addObject(new terminal(worldMaster.getWorlds().get(15)), 600, 150);
     }
     public String toString(){

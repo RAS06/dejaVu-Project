@@ -15,7 +15,7 @@ public class roomTwelve extends World
      */
     public roomTwelve()
     {    
-        super(250, 750, 1); 
+        super(750, 750, 1); 
         addObject(new champion(), 375, 700);
         showText("roomTwelve", 125, 500);
         if(!added){
