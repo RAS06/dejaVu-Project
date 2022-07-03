@@ -53,8 +53,8 @@ public class chatDialougeQuerySelector extends Actor
         if(form == 3){
             champion.lockChampion();
             ArrayList<String> query = new ArrayList<String>();
-            
-             int queryNumber = query.size();
+            query.add("youGotAShard.jpg");
+            int queryNumber = query.size();
             if(currTargetDisplay < queryNumber){
                 setImage(query.get(currTargetDisplay));
             } else{
@@ -65,8 +65,8 @@ public class chatDialougeQuerySelector extends Actor
         if(form == 4){
             champion.lockChampion();
             ArrayList<String> query = new ArrayList<String>();
-            
-             int queryNumber = query.size();
+            query.add("pointlesslyLongHallway.jpg");
+            int queryNumber = query.size();
             if(currTargetDisplay < queryNumber){
                 setImage(query.get(currTargetDisplay));
             } else{
@@ -77,8 +77,20 @@ public class chatDialougeQuerySelector extends Actor
         if(form == 5){
             champion.lockChampion();
             ArrayList<String> query = new ArrayList<String>();
-            
-             int queryNumber = query.size();
+            query.add("middleOfNowhere.jpg");
+            int queryNumber = query.size();
+            if(currTargetDisplay < queryNumber){
+                setImage(query.get(currTargetDisplay));
+            } else{
+                champion.unlockChampion();
+                this.getWorld().removeObject(this);
+            }
+        }
+        if(form == 6){
+            champion.lockChampion();
+            ArrayList<String> query = new ArrayList<String>();
+            query.add("wasteOfTime.jpg");
+            int queryNumber = query.size();
             if(currTargetDisplay < queryNumber){
                 setImage(query.get(currTargetDisplay));
             } else{
