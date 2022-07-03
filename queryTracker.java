@@ -53,9 +53,9 @@ public class queryTracker extends Actor
         }
         if(i > query.size()){
             for(int j = 0; j < 5; j++){
-                worldMaster.getWorlds().get(13).addObject(new teleporter(worldMaster.getWorlds().get(10),"vertBorderControl.png"), 200, 50 + 30 * i);
+                worldMaster.getWorlds().get(13).addObject(new teleporter(worldMaster.getWorlds().get(10),"vertBorderControl.png"), 500, 0 + 30 * i);
             }
-            worldMaster.getWorlds().get(13).addObject(new door("door(Top).png"), 200, 375);
+            worldMaster.getWorlds().get(13).addObject(new door("rightSideDoor.PNG"), 500, 375);
         }
         
         timer--;
