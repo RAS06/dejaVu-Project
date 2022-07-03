@@ -123,7 +123,7 @@ public class champion extends Actor
             this.removeTouching(shard.class);
             this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
             shardCount++;
-            //this.getWorld().addObject(new chatDialougeQuerySelector(2), 375, 375);
+            this.getWorld().addObject(new chatDialougeQuerySelector(3), 375, 375);
         }
     }
     
