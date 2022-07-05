@@ -98,6 +98,18 @@ public class chatDialougeQuerySelector extends Actor
                 this.getWorld().removeObject(this);
             }
         }
+        if(form == 7){
+            champion.lockChampion();
+            ArrayList<String> query = new ArrayList<String>();
+            query.add("correct.jpg");
+            int queryNumber = query.size();
+            if(currTargetDisplay < queryNumber){
+                setImage(query.get(currTargetDisplay));
+            } else{
+                champion.unlockChampion();
+                this.getWorld().removeObject(this);
+            }
+        }
         if(Greenfoot.isKeyDown("space") && !justPressed){
             justPressed = true;
             currTargetDisplay++;
