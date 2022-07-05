@@ -13,13 +13,23 @@ public class dialPuzzle extends World
      * Constructor for objects of class dialPuzzle.
      * 
      */
+    private static boolean added = false;
     public dialPuzzle()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(750, 750, 1);
+        if(!added){
+            worldMaster.addWorld(15, this);
+            added = true;
+            Greenfoot.setWorld(new colorPuzzle());
+        }
         addObject(new dial(), 150, 300);
         addObject(new dial(), 350, 300);
         addObject(new dial(), 550, 300);
-        prepare();
+        //prepare();
+        addObject(new teleportationButton("pressBToGoBack.png", worldMaster.getWorlds().get(4)), 600, 725);
     }
-    /**
+    public String toString(){
+        return "Dial Puzzle";
+    }
+}
