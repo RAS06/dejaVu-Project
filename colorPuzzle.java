@@ -24,6 +24,11 @@ public class colorPuzzle extends World
             Greenfoot.setWorld(worldMaster.getWorlds().get(0));
         }
         addObject(new teleportationButton("pressBToGoBack.png", worldMaster.getWorlds().get(7)), 600, 725);
+        addObject(new colorPuzzleButton("colorPuzzlePieceR.jpg", "red"), 190, 150);
+        addObject(new colorPuzzleButton("colorPuzzlePieceG.jpg", "green"), 560, 150);
+        addObject(new colorPuzzleButton("colorPuzzlePieceB.jpg", "blue"), 190, 450);
+        addObject(new colorPuzzleButton("colorPuzzlePieceY.jpg", "yellow"), 560, 450);
+        addObject(new colorPuzzleSubmit(), 375, 300);
     }
     public String toString(){
         return "Color Puzzle";

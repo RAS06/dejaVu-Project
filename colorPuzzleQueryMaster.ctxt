@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=colorPuzzleQueryMaster
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ colorPuzzleQueryComparator\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=colorPuzzleQueryMaster()
+comment3.params=colorIn
+comment3.target=void\ addInput(java.lang.String)
+comment4.params=
+comment4.target=java.util.ArrayList\ getSolution()
+comment5.params=
+comment5.target=java.util.ArrayList\ getInput()
+comment6.params=
+comment6.target=void\ clearInput()
+numComments=7
