@@ -29,6 +29,7 @@ public class colorPuzzle extends World
         addObject(new colorPuzzleButton("colorPuzzlePieceB.jpg", "blue"), 190, 450);
         addObject(new colorPuzzleButton("colorPuzzlePieceY.jpg", "yellow"), 560, 450);
         addObject(new colorPuzzleSubmit(), 375, 300);
+        addObject(new hints("colorPuzzleInstructions.png"), 100, 650);
     }
     public String toString(){
         return "Color Puzzle";
