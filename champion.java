@@ -13,7 +13,7 @@ public class champion extends Actor
      */
         public static boolean gotKey = false;
         public static int shardCount;
-        private static boolean locked = false;
+        public static boolean locked = false;
         public static boolean hasFlower = false;
         public static boolean started = false;
         public static int gameClock;
@@ -46,10 +46,11 @@ public class champion extends Actor
         //Used to move the champion from another class. 
         moveChampion();
         gameClock++;
-        System.out.println(gameClock);
+        //System.out.println("Ticks: " + gameClock);
         if(gameClock > 12000){
             resetMap();
         }
+        if(shardCount >= 5){Greenfoot.setWorld(new victoryWorld());}
     }
     //Make sure to add the !locked conditional when moving the champion for text cutscenes.
     public champion() {movementTick = 0;}
@@ -123,23 +124,33 @@ public class champion extends Actor
                 }
             }
         }
-        if(this.isTouching(rose.class) && Greenfoot.isKeyDown("e")){
-            this.removeTouching(rose.class);
-            this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
-            hasFlower = true;
-            this.getWorld().addObject(new chatDialougeQuerySelector(2), 375, 375);
-        }
         if(this.isTouching(shard.class) && Greenfoot.isKeyDown("e")){
             this.removeTouching(shard.class);
             this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
             shardCount++;
             this.getWorld().addObject(new chatDialougeQuerySelector(3), 375, 375);
         }
+        if(this.isTouching(rose.class) && Greenfoot.isKeyDown("e")){
+            this.removeTouching(rose.class);
+            this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
+            hasFlower = true;
+            this.getWorld().addObject(new chatDialougeQuerySelector(2), 375, 375);
+        }
         if(this.isTouching(statue.class) && Greenfoot.isKeyDown("e") && hasFlower){
             this.removeTouching(statue.class);
             this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
             this.getWorld().addObject(new statueCompleted(), 375, 200);
             this.getWorld().addObject(new shard(), 375, 375);
+        }
+        if(this.isTouching(furnace.class) && Greenfoot.isKeyDown("e") && !furnace.retrieved){
+            this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
+            this.getWorld().addObject(new shard(), 375, 500);
+            this.getWorld().addObject(new chatDialougeQuerySelector(9), 375, 375);
+            furnace.setRetrieved();
+        }
+        if(this.isTouching(book.class) && Greenfoot.isKeyDown("e")){
+            this.getWorld().removeObjects(this.getWorld().getObjects(sign.class));
+            this.getWorld().addObject(new chatDialougeQuerySelector(11), 375, 150);
         }
     }
     
@@ -163,7 +174,7 @@ public class champion extends Actor
     }
     public static void lockChampion(){locked = true;}
     public static void unlockChampion(){locked = false;}
-    
+    public static void incrementGameClock(){gameClock++;}
     
     
     
@@ -172,10 +183,14 @@ public class champion extends Actor
         unlockedDoor = false;
         hasFlower = false;
         shardCount = 0;
+        furnace.reset();
         
         Greenfoot.setWorld(worldMaster.getWorlds().get(0));
         worldMaster.getWorlds().get(0).removeObjects(worldMaster.getWorlds().get(0).getObjects(key.class));
         worldMaster.getWorlds().get(0).addObject(new key(), 600, 600);
+        
+        Greenfoot.setWorld(worldMaster.getWorlds().get(1));
+        worldMaster.getWorlds().get(1).removeObjects(worldMaster.getWorlds().get(1).getObjects(shard.class));
         
         Greenfoot.setWorld(worldMaster.getWorlds().get(2));
         worldMaster.getWorlds().get(2).removeObjects(worldMaster.getWorlds().get(2).getObjects(door.class));
