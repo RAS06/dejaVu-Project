@@ -16,8 +16,6 @@ public class roomFive extends World
     public roomFive()
     {    
         super(750, 750, 1); 
-        addObject(new champion(), 375, 700);
-        showText("roomFive", 300, 500);
         if(!added){
             worldMaster.addWorld(4, this);
             added = true;
@@ -46,7 +44,7 @@ public class roomFive extends World
             addObject(new teleporter(worldMaster.getWorlds().get(12),"horizBorderControl.png"), 300 + 30 * i, 700);
         }
         addObject(new door("bottomDoor.PNG"), 355, 720);
-        addObject(new terminal(worldMaster.getWorlds().get(15)), 600, 150);
+        //addObject(new terminal(worldMaster.getWorlds().get(15)), 600, 150);
     }
     public String toString(){
         return "Room Five";

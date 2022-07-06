@@ -16,8 +16,6 @@ public class roomThree extends World
     public roomThree()
     {    
         super(750, 750, 1); 
-        addObject(new champion(), 375, 700);
-        showText("roomThree", 300, 500);
         if(!added){
             worldMaster.addWorld(2, this);
             added = true;

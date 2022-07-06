@@ -16,8 +16,6 @@ public class roomTen extends World
     public roomTen()
     {    
         super(750, 750, 1); 
-        addObject(new champion(), 375, 700);
-        showText("roomTen", 300, 500);
         if(!added){
             worldMaster.addWorld(9, this);
             added = true;
@@ -28,12 +26,12 @@ public class roomTen extends World
             addObject(new obstructor("right", "vertBorderControl.png"), 720, i * 30);
             addObject(new obstructor("left", "vertBorderControl.png"), 30, i * 30);
             addObject(new obstructor("top", "horizBorderControl.png"), i * 30, 30);
-            addObject(new obstructor("bottom", "horizBorderControl.png"), i * 30, 720);
+            addObject(new obstructor("bottom", "horizBorderControl.png"), i * 30, 450);
         }
         for(int i = 0; i < 5; i++){ //N
-            addObject(new teleporter(worldMaster.getWorlds().get(14),"horizBorderControl.png"), 0 + 30 * i, 50);
+            addObject(new teleporter(worldMaster.getWorlds().get(14),"horizBorderControl.png"), 300 + 30 * i, 50);
         }
-        addObject(new door("topDoor.PNG"), 125, 25);
+        addObject(new door("topDoor.PNG"), 375, 25);
         addObject(new hints("roomTenKeyHint.jpg"), 375, 600);
     }
     public String toString(){

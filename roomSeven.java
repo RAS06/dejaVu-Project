@@ -17,8 +17,6 @@ public class roomSeven extends World
     public roomSeven()
     {    
         super(750, 750, 1); 
-        addObject(new champion(), 375, 700);
-        showText("roomSeven", 300, 500);
         if(!added){
             worldMaster.addWorld(6, this);
             added = true;
@@ -29,7 +27,7 @@ public class roomSeven extends World
             addObject(new obstructor("right", "vertBorderControl.png"), 720, i * 30);
             addObject(new obstructor("left", "vertBorderControl.png"), 30, i * 30);
             addObject(new obstructor("top", "horizBorderControl.png"), i * 30, 30);
-            addObject(new obstructor("bottom", "horizBorderControl.png"), i * 30, 720);
+            addObject(new obstructor("bottom", "horizBorderControl.png"), i * 30, 450);
         }
         for(int i = 0; i < 5; i++){ //E
                 addObject(new teleporter(worldMaster.getWorlds().get(5),"vertBorderControl.png"), 700, 250 + 30 * i);
