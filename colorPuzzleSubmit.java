@@ -16,6 +16,7 @@ public class colorPuzzleSubmit extends Actor
     public void act()
     {
         testForCorrect();
+        champion.incrementGameClock();
     }
     public colorPuzzleSubmit(){setImage("submitButton.jpg");}
     public void testForCorrect(){
@@ -27,13 +28,15 @@ public class colorPuzzleSubmit extends Actor
                         failed = true;
                     }
                 }
+                if(failed){worldMaster.getWorlds().get(16).addObject(new chatDialougeQuerySelector(8), 375, 375);}
                 if(!(failed || completed)){
                     worldMaster.getWorlds().get(7).addObject(new shard(), 375, 375);
                     completed = true;
                     worldMaster.getWorlds().get(16).addObject(new chatDialougeQuerySelector(7), 375, 375);
                 }
-            }
+            } else{worldMaster.getWorlds().get(16).addObject(new chatDialougeQuerySelector(8), 375, 375);}
             colorPuzzleQueryMaster.clearInput();
+            champion.locked = false;
         }
     }
     
