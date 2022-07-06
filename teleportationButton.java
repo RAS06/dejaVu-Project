@@ -17,6 +17,7 @@ public class teleportationButton extends Actor
     {
         if(Greenfoot.isKeyDown("b")){
             Greenfoot.setWorld(target);
+            champion.locked = false;
         }
     }
     public teleportationButton(String filename, World initTarget){setImage(filename); target = initTarget;}
