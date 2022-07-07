@@ -17,12 +17,9 @@ public class roomNine extends World
     public roomNine()
     {    
         super(750, 750, 1); 
-        addObject(new champion(), 375, 700);
-        showText("roomNine", 300, 500);
         if(!added){
             worldMaster.addWorld(8, this);
             added = true;
-            worldMaster.getWorlds().get(8).addObject(new champion(), 375, 700);
             Greenfoot.setWorld(new roomTen());
         }
         for(int i = -1; i < 25; i++){
@@ -36,6 +33,8 @@ public class roomNine extends World
         }
         addObject(new door("leftSideDoor.PNG"), 70, 375);
         addObject(new vent(worldMaster.getWorlds().get(0)), 375, 700);
+        addObject(new statue(), 375, 200);
+        worldMaster.getWorlds().get(8).addObject(new champion(), 375, 700);
     }
     public String toString(){
         return "Room Nine";

@@ -16,11 +16,10 @@ public class roomEight extends World
     public roomEight()
     {    
         super(750, 750, 1); 
-        addObject(new champion(), 375, 700);
-        showText("roomEight", 300, 500);
         if(!added){
             worldMaster.addWorld(7, this);
             added = true;
+            addObject(new rose(), 600, 700);
             worldMaster.getWorlds().get(7).addObject(new champion(), 375, 700);
             Greenfoot.setWorld(new roomNine());
         }
@@ -38,7 +37,6 @@ public class roomEight extends World
                 addObject(new teleporter(worldMaster.getWorlds().get(8),"vertBorderControl.png"), 700, 250 + 30 * i);
         }
         addObject(new door("rightSideDoor.PNG"), 680, 375);
-        addObject(new rose(), 700, 700);
         addObject(new terminal(worldMaster.getWorlds().get(16)), 600, 150);
     }
     public String toString(){

@@ -98,6 +98,75 @@ public class chatDialougeQuerySelector extends Actor
                 this.getWorld().removeObject(this);
             }
         }
+        if(form == 7){
+            champion.lockChampion();
+            ArrayList<String> query = new ArrayList<String>();
+            query.add("correct.jpg");
+            int queryNumber = query.size();
+            if(currTargetDisplay < queryNumber){
+                setImage(query.get(currTargetDisplay));
+            } else{
+                champion.unlockChampion();
+                this.getWorld().removeObject(this);
+            }
+        }
+        if(form == 8){
+            champion.lockChampion();
+            ArrayList<String> query = new ArrayList<String>();
+            query.add("wrong.jpg");
+            int queryNumber = query.size();
+            if(currTargetDisplay < queryNumber){
+                setImage(query.get(currTargetDisplay));
+            } else{
+                champion.unlockChampion();
+                this.getWorld().removeObject(this);
+            }
+        }
+        if(form == 9){
+            champion.lockChampion();
+            ArrayList<String> query = new ArrayList<String>();
+            query.add("furnaceShard.jpg");
+            query.add("dontPayMeEnough.jpg");
+            int queryNumber = query.size();
+            if(currTargetDisplay < queryNumber){
+                setImage(query.get(currTargetDisplay));
+            } else{
+                champion.unlockChampion();
+                this.getWorld().removeObject(this);
+            }
+        }
+        if(form == 10){
+            champion.lockChampion();
+            ArrayList<String> query = new ArrayList<String>();
+            query.add("congrats1.jpg");
+            query.add("congrats2.jpg");
+            int queryNumber = query.size();
+            if(currTargetDisplay < queryNumber){
+                setImage(query.get(currTargetDisplay));
+            } else{
+                champion.unlockChampion();
+                this.getWorld().removeObject(this);
+            }
+        }
+        if(form == 11){
+            champion.lockChampion();
+            ArrayList<String> query = new ArrayList<String>();
+            query.add("kingsDiary.jpg");
+            query.add("youLittleDevil.jpg");
+            query.add("diary1.jpg");
+            query.add("diary2.jpg");
+            query.add("diary3.jpg");
+            query.add("diary4.jpg");
+            query.add("diary5.jpg");
+            query.add("diary6.jpg");
+            int queryNumber = query.size();
+            if(currTargetDisplay < queryNumber){
+                setImage(query.get(currTargetDisplay));
+            } else{
+                champion.unlockChampion();
+                this.getWorld().removeObject(this);
+            }
+        }
         if(Greenfoot.isKeyDown("space") && !justPressed){
             justPressed = true;
             currTargetDisplay++;

@@ -18,12 +18,10 @@ public class roomFour extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(750, 750, 1); 
-        addObject(new champion(), 375, 700);
-        showText("roomFour", 300, 500);
         if(!added){
             worldMaster.addWorld(3, this);
             added = true;
-            worldMaster.getWorlds().get(3).addObject(new champion(), 375, 700);
+
             Greenfoot.setWorld(new roomFive());
         }
         for(int i = -1; i < 25; i++){
@@ -37,6 +35,8 @@ public class roomFour extends World
         }
         addObject(new door("rightSideDoor.PNG"), 680, 375);
         addObject(new vent(worldMaster.getWorlds().get(0)), 375, 75);
+        addObject(new shard(), 375, 375);
+        worldMaster.getWorlds().get(3).addObject(new champion(), 375, 700);
     }
     public String toString(){
         return "Room Four";

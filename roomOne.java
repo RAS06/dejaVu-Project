@@ -24,17 +24,14 @@ public class roomOne extends World
         if(!added){
             worldMaster.addWorld(0, this);
             added = true;
-            addObject(new champion(), 200, 200);
-            addObject(new key(), 500, 500);
+            
             Greenfoot.setWorld(new roomTwo());
         }
+        addObject(new champion(), 200, 200);
         
         
-        
-        addObject(new key(), 500, 500);
-        
-        showText("roomOne", 300, 500);
-        
+        addObject(new key(), 600, 600);
+                
         for(int i = -1; i < 25; i++){
             addObject(new obstructor("right", "vertBorderControl.png"), 720, i * 30);
             addObject(new obstructor("left", "vertBorderControl.png"), 30, i * 30);
@@ -45,7 +42,6 @@ public class roomOne extends World
             addObject(new teleporter(worldMaster.getWorlds().get(1),"horizBorderControl.png"), 275 + 30 * i, 50);
         }
         addObject(new door("topDoor.PNG"), 365, 25);
-        addObject(new champion(), 200, 200);
         
     }
     public String toString(){

@@ -15,7 +15,7 @@ public class worldMaster extends Actor
      */
     private static ArrayList<World> worlds = new ArrayList<World>();
     public void act()
-    {}
+    {checkForStart();}
     public worldMaster(){
         
     }
@@ -31,4 +31,10 @@ public class worldMaster extends Actor
     public static ArrayList<World> getWorlds(){
         return worlds;
     }  
+    public static void checkForStart(){
+        if(Greenfoot.isKeyDown("space")){
+            champion.started = true;
+            Greenfoot.setWorld(new roomOne());
+        }
+    }
 }
