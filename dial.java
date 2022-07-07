@@ -15,10 +15,14 @@ public class dial extends Actor
     public void act()
     {
         if(Greenfoot.isKeyDown("right")){
-            turnRight();
+            if(dialPuzzle.getSelect == 1){
+                turnRight();
+            }   
         }
         if(Greenfoot.isKeyDown("left")){
-            turnLeft();
+            if(dialPuzzle.getSelect == 1){
+                turnLeft();
+            }   
         }
     }
     public void turnLeft()
@@ -30,3 +34,4 @@ public class dial extends Actor
         setRotation(getRotation() + 5);
     }
     }
+}
