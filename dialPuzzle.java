@@ -28,6 +28,9 @@ public class dialPuzzle extends World
         addObject(new dial(1), 150, 300);
         addObject(new dial(2), 350, 300);
         addObject(new dial(3), 550, 300);
+        addObject(new shape(1), 150, 450);
+        addObject(new shape(2), 350, 450);
+        addObject(new shape(3), 550, 450);
         addObject(new teleportationButton("pressBToGoBack.png", worldMaster.getWorlds().get(4)), 600, 725);
     }
     public String toString(){
