@@ -566,6 +566,7 @@ dependency99.from=dialPuzzle
 dependency99.to=worldMaster
 dependency99.type=UsesDependency
 <<<<<<< HEAD
+<<<<<<< HEAD
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=275
@@ -574,6 +575,8 @@ height=744
 package.numDependencies=178
 package.numTargets=48
 =======
+=======
+>>>>>>> 61744e17ca995cc5ea1d4cb3ea12e68006d9e6c1
 editor.fx.0.height=694
 editor.fx.0.width=1294
 editor.fx.0.x=-7
@@ -581,6 +584,9 @@ editor.fx.0.y=-7
 height=974
 package.numDependencies=175
 package.numTargets=47
+<<<<<<< HEAD
+>>>>>>> 61744e17ca995cc5ea1d4cb3ea12e68006d9e6c1
+=======
 >>>>>>> 61744e17ca995cc5ea1d4cb3ea12e68006d9e6c1
 project.charset=UTF-8
 publish.hasSource=false
